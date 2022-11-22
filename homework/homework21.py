@@ -21,6 +21,7 @@ import re
 
 # def check_number(num):
 #     reg = r'^\+?7\s?\-?\(?\d{3}\)?\s?\-?\d{3}\s?\-?\d{2}\s?-?\d{2}'
+
 #     s = re.findall(reg, num)
 #     if len(s[0]) == len(num):
 #         return s

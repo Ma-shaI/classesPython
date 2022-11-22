@@ -1,16 +1,17 @@
 import re
 
 
-def check_password(password):
-    return re.findall(r'[A-z\d@_-]{6,18}$', password)
-
-
-print(check_password('my-pss@w0rd'))
+# def check_password(password):
+#     return re.findall(r'[A-z\d@_-]{6,18}$', password)
+#
+#
+# print(check_password('my-pss@w0rd'))
 
 
 def check_number(number):
     s = re.findall(r'^M{0,3}(C|CC|CCC|CD|D|DC|DCC|DCCC|CM)?(X|XX|XXX|XL|L|LX|LXX|LXXX|XC)?'
                    r'(I|II|III|IV|V|VI|VII|VIII|IX)?$', number)
+    # s = re.findall(r'^M{0,3}(CM|CD|D?C{0,3})?(XC|XL|L?X{0,3})?(IX|IV|V?I{0,3})?$', ital)
     if len(s) > 0:
         print(s)
         return 'это римское число'
