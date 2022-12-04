@@ -130,3 +130,61 @@
 # # print(f.tell())  # 17
 #
 # f.close()
+
+# with open('text5.txt', 'w+') as f:
+#     print(f.write('0123456789'))
+
+# with open('text5.txt', 'r') as f:
+#     for line in f:
+#         print(line)
+
+# file_name = 'res.txt'
+# lst = [4.5, 2.8, 3.9, 1.0, 0.3, 4.33, 7.777]
+#
+#
+# def get_line(lt):
+#     lt = list(map(str, lt))
+#     return ' '.join(lt)
+#
+#
+# with open(file_name, 'w') as f:
+#     f.write(get_line(lst))
+
+# print(get_line(lst))
+
+
+# with open(file_name, 'r') as f:
+#     nums = f.read()
+#
+#
+# print(nums)
+# lst = list(map(float, nums.split(' ')))
+# print(lst)
+# print(len(lst))
+
+
+# def longest_words(file):
+#     with open(file_name, 'r', encoding='utf8') as text:
+#         w = text.read().split()
+#         max_length = len(max(w, key=len))
+#         res = [word for word in w if len(word) == max_length]
+#         if len(res) ==1:
+#             return res[0]
+#         return res
+#
+#
+# file_name = 'res.txt'
+# print(longest_words(file_name))
+
+#
+# text ='Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n'
+# with open('one.txt', 'w') as f:
+#     f.write(text)
+
+# read_file = 'one.txt'
+# write_file = 'two.txt'
+#
+# with open(read_file, 'r') as fr, open(write_file, 'w') as fw:
+#     for line in fr:
+#         line = line.replace('Строка', 'Линия - ')
+#         fw.write(line)
