@@ -73,17 +73,48 @@ import os
 #         f.write(f'Текст для файла по пути {file}.')
 
 
-print("Обход Work снизу вверх")
-for root, dirs, files in os.walk('Work', topdown=False):
+# print("Обход Work снизу вверх")
+# for root, dirs, files in os.walk('Work', topdown=False):
+#
+#     print(root)
+#     print(dirs)
+#     print(files)
+#
+# print()
+# print("Обход Work сверху вниз")
+# for root, dirs, files in os.walk('Work', topdown=True):
+#
+#     print(root)
+#     print(dirs)
+#     print(files)
 
-    print(root)
-    print(dirs)
-    print(files)
+# def print_tree(root, td):
+#     print(f'Обход {root} {"сверху вниз" if td else "снизу вверх"}')
+#     for roots, dirs, files in os.walk(root, topdown=td):
+#         print(roots)
+#         print(dirs)
+#         print(files)
+#     print('-'*50)
+#
+#
+# print_tree('Work', td=False)
+# print_tree('Work', td=True)
 
-print()
-print("Обход Work сверху вниз")
-for root, dirs, files in os.walk('Work', topdown=True):
+# print(os.path.exists(r'C:\Users\Компьютер\OneDrive\Рабочий стол\Project\lesson\Work\w.txt'))
+# возвращает булево значение есть ли директорий или файл по указанному пути
 
-    print(root)
-    print(dirs)
-    print(files)
+# import time
+# path = 'lesson4.py'
+# print(os.path.getatime(path))  # возвращает время последнего доступа к файлу
+# print(os.path.getctime(path))  # возвращает время создания файла
+# print(os.path.getmtime(path))  # возвращает время последнего изменения файла
+# print(os.path.getsize(path))  # возвращает размер файла в байтах
+
+# size = round(os.path.getsize(path) / 1024, 2)
+# print(size)
+# t = os.path.getctime(path)
+# print(time.strftime('%d.%m.%Y, %H:%M:%S', time.localtime(t)))
+
+
+# print(os.path.isfile(r'Work'))  # является ли путь файлом
+# print(os.path.isdir(r'Work'))  # является ли путь папкой
