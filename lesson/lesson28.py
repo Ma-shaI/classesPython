@@ -185,7 +185,6 @@
 # p = Point(5,7)
 # print(len(p))
 
-import math
 
 # class Point:
 #     __slots__ = ('x', 'y', '__length')
@@ -304,10 +303,3 @@ import math
 # s2 = strip_chars('?:!.; ')
 # print(s2(' ?;Hello World! '))
 
-a = 11
-s = 6
-c = 6
-
-print('\n'.join([f"{' ' * (s - x - 1)}{'*' * (2 * x + 1)}" for x in range(0, s)]))
-for i in range(0, c):
-    print(' ' * (s - i - 1), '*'*(2 * i + 1))
