@@ -31,7 +31,7 @@ class Square(Shape):
         self.a = a
 
     def get_perimetr(self):
-        perimetr = self.a *4
+        perimetr = self.a * 4
         print(f'Периметр: {perimetr}')
 
     def get_area(self):
@@ -99,25 +99,34 @@ class Triangle(Shape):
         print(f'Площадь: {area}')
 
     def get_picture(self):
+        # m = 0
+        # if (self.a == self.b and self.a != self.c) or self.a == self.c and self.a != self.b:
+        #     for i in range(0, self.a):
+        #         print(' ' * (self.a - i - 1), '*' * (2 * i + 1))
+        # elif self.b == self.c and self.b != self.a:
+        #     for i in range(0, self.b):
+        #         print(' ' * (self.b - i - 1), '*' * (2 * i + 1))
+        # elif self.a == self.b == self.c:
+        #     m = (2 * self.a) - 2
+        #     for i in range(0, self.a):
+        #         for j in range(0, m):
+        #             print(end=' ')
+        #         m -= 1
+        #         for j in range(0, i + 1):
+        #             print('*', end=' ')
+        #         print(' ')
+        # else:
+        #     print('К сожалению я не могу нарисовать разносторонний треугольник')
 
-        m = 0
-        if (self.a == self.b and self.a != self.c) or self.a == self.c and self.a != self.b:
-            for i in range(0, self.a):
-                print(' ' * (self.a - i - 1), '*' * (2 * i + 1))
-        elif self.b == self.c and self.b != self.a:
-            for i in range(0, self.b):
-                print(' ' * (self.b - i - 1), '*' * (2 * i + 1))
-        elif self.a == self.b == self.c:
-            m = (2 * self.a) - 2
-            for i in range(0, self.a):
-                for j in range(0, m):
-                    print(end=' ')
-                m -= 1
-                for j in range(0, i + 1):
-                    print('*', end=' ')
-                print(' ')
-        else:
-            print('К сожалению я не могу нарисовать разносторонний треугольник')
+        # lst = [self.a, self.b, self.c]
+        # n = min(lst)
+        # for i in range(n):
+        #     print(' ' * (n - i - 1) + '*' * (2 * i + 1))
+
+        lst = [self.a, self.b, self.c]
+        n = min(lst)
+        rows = [' ' * (n - i - 1) + '*' * (2 * i + 1) for i in range(n)]
+        print('\n'.join(rows))
 
     def print_info(self):
         print('===Треугольник===')
@@ -125,6 +134,7 @@ class Triangle(Shape):
         print('Сторона 2:', self.b)
         print('Сторона 3:', self.c)
         super().get_color()
+
         self.get_area()
         self.get_perimetr()
         self.get_picture()
@@ -136,5 +146,5 @@ print()
 r1 = Rectangle('green', 3, 7)
 r1.print_info()
 print()
-t1 = Triangle('yellow', 11, 6, 6)
+t1 = Triangle('yellow', 7, 8, 6)
 t1.print_info()
