@@ -9,7 +9,7 @@ class Power:
         return wrap
 
 
-@Power(4)
+@Power(3)
 def func(a, b):
     return a * b
 
