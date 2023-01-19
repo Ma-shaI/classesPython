@@ -167,34 +167,161 @@
 # p.name.set('Vasya')
 # print(p.name.get(), p.surname.get())
 
-class ValidateString:
-    def __set_name__(self, owner, name):
-        self.__name = name
-
-    def __get__(self, instance, owner):
-        print('get')
-        return instance.__dict__[self.__name]
-
-    def __set__(self, instance, value):
-        if not isinstance(value, str):
-            raise ValueError(f'{self.__name} должно быть строкой')
-        instance.__dict__[self.__name] = value
-
-    def __delete__(self, instance):
-        del instance.__dict__[self.__name]
-
-
-class Person:
-    name = ValidateString()
-    surname = ValidateString()
-
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
-
-
-p = Person('Ivan', 'Petrov')
-p.name = 'Oleg'
+# class ValidateString:
+#     def __set_name__(self, owner, name):
+#         self.__name = name
 #
-# print(p.name)
-# print(p.surname)
+#     def __get__(self, instance, owner):
+#         print('get')
+#         return instance.__dict__[self.__name]
+#
+#     def __set__(self, instance, value):
+#         if not isinstance(value, str):
+#             raise ValueError(f'{self.__name} должно быть строкой')
+#         instance.__dict__[self.__name] = value
+#
+#     def __delete__(self, instance):
+#         del instance.__dict__[self.__name]
+#
+#
+# class Person:
+#     name = ValidateString()
+#     surname = ValidateString()
+#
+#     def __init__(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#
+#
+# p = Person('Ivan', 'Petrov')
+# p.name = 'Oleg'
+# #
+# # print(p.name)
+# # print(p.surname)
+
+# class NonNegative:
+#     def __set_name__(self, owner, name):
+#         self.name = name
+#
+#     def __get__(self, instance, owner):
+#         return instance.__dict__[self.name]
+#
+#     def __set__(self, instance, value):
+#         if value > 0:
+#             instance.__dict__[self.name] = value
+#         else:
+#             raise ValueError(f'{self.name} должно быть положительным')
+#
+#
+# class Order:
+#     price = NonNegative()
+#     qty = NonNegative()
+#
+#     def __init__(self, name, price, qty):
+#         self.name = name
+#         self.price = price
+#         self.qty = qty
+#
+#     def total(self):
+#         return self.price * self.qty
+#
+#
+# o1 = Order('apple', 5, 10)
+# print(o1.total())
+
+
+# class Integer:
+#     @staticmethod
+#     def verify_coord(coord):
+#         if not isinstance(coord, int):
+#             raise TypeError(f'Координата {coord} должно быть целым числом')
+#
+#     def __set_name__(self, owner, name):
+#         self.name = '_' + name
+#
+#     def __get__(self, instance, owner):
+#         return instance.__dict__[self.name]
+#
+#     def __set__(self, instance, value):
+#         self.verify_coord(value)
+#         instance.__dict__[self.name] = value
+#
+#
+
+# class Integer:
+#     @staticmethod
+#     def verify_coord(coord):
+#         if not isinstance(coord, int):
+#             raise TypeError(f'Координата {coord} должно быть целым числом')
+#
+#     def __set_name__(self, owner, name):
+#         self.name = '_' + name
+#
+#     def __get__(self, instance, owner):
+#         # return instance.__dict__[self.name]
+#         return getattr(instance, self.name)
+#
+#     def __set__(self, instance, value):
+#         self.verify_coord(value)
+#         # instance.__dict__[self.name] = value
+#         setattr(instance, self.name, value)
+#
+#     def __delete__(self, instance):
+#         del instance.__dict__[self.name]
+#
+#
+# class Point3D:
+#     x = Integer()
+#     y = Integer()
+#     z = Integer()
+#
+#     def __init__(self, x, y, z):
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#
+# p1 = Point3D(1, 2, 3)
+# del p1.x
+# print(p1.__dict__)
+
+
+# class Point:
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# p1 = Point(5, 10)
+# print(p1.__dict__)
+# print(getattr(p1, 'x'))
+# print(p1.x)
+# print(setattr(p1, 'x', 6))
+# print(p1.__dict__)
+# print(hasattr(p1, 'z'))
+
+# class Integer:
+#
+#     def __set_name__(self, owner, name):
+#         self.name = '_' + name
+#
+#     def __get__(self, instance, owner):
+#         # return instance.__dict__[self.name]
+#         return getattr(instance, self.name)
+#
+#
+# class Point3D:
+#     x = Integer()
+#     y = Integer()
+#     z = Integer()
+#
+#     def __init__(self, x, y, z):
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#
+# p1 = Point3D(1, 2, 3)
+# print(p1.__dict__)
+# print(p1.y)
