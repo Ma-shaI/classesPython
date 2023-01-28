@@ -6,8 +6,9 @@ class NonNegative:
         return instance.__dict__[self.name]
 
     def __set__(self, instance, value):
-        if value < 0:
-            raise ValueError('Сторона треугольника должна быть положительным числом')
+
+        if not isinstance(value, int) or value < 0:
+            raise ValueError(f'Сторона треугольника {value} должна быть положительным целым числом')
 
         else:
             instance.__dict__[self.name] = value
