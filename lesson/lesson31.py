@@ -192,20 +192,35 @@ class Student:
     def average_mark(self):
         return round(sum(self.marks) / len(self.marks), 2)
 
-    def write_json(self):
+    # def write_json(self):
+    #     try:
+    #         data = json.load(open('students.json'))
+    #     except FileNotFoundError:
+    #         data = []
+    #     data.append(f'{self.name}:{self.marks}')
+    #
+    #     with open('students.json', 'w') as f:
+    #         json.dump(data, f, indent=4)
+    #
+    # def read_json(self):
+    #     with open('students.json', 'r') as f:
+    #         data = json.load(f)
+    #         print(data)
+    @staticmethod
+    def dupm_to_json(stud, filename):
+
         try:
-            data = json.load(open('students.json'))
+            data = json.load(open(filename))
         except FileNotFoundError:
             data = []
-        data.append(f'{self.name}:{self.marks}')
+        data.append({'name': stud.name, 'marks': stud.marks})
+        with open(filename, 'w') as f:
+            json.dump(data, f)
 
-        with open('students.json', 'w') as f:
-            json.dump(data, f, indent=4)
-
-    def read_json(self):
-        with open('students.json', 'r') as f:
-            data = json.load(f)
-            print(data)
+    @staticmethod
+    def load_to_file(filename):
+        with open(filename, 'r') as f:
+            print(json.load(f))
 
 
 class Group:
@@ -248,7 +263,33 @@ class Group:
             print(data)
 
 
+    @staticmethod
+    def dump_group(file, group):
+        try:
+            data = json.load(open(file))
+        except FileNotFoundError:
+            data = []
+
+        with open(file, 'w') as f:
+            stud_list = []
+            for i in group.students:
+                stud_list.append([i.name, i.marks])
+            data.append(stud_list)
+            json.dump(data, f, indent=2)
+
+    @staticmethod
+    def upload_journal(file):
+        with open(file, 'r') as f:
+            print(json.load(f))
+
+
 s1 = Student('Bodnya', [5, 4, 3, 4, 5, 3])
+s2 = Student('Nikolaenlo', [2, 3, 5, 4, 2])
+s3 = Student('Birukov', [3, 5, 3, 2, 5, 4])
+sts = [s1, s2]
+my_group = Group(sts, 'Группа ГК Python')
+group22 = [s2]
+my_group2 = Group(group22, "ГК Web")
 # print(s1)
 # s1.add_marks(4)
 # # print(s1)
@@ -257,21 +298,16 @@ s1 = Student('Bodnya', [5, 4, 3, 4, 5, 3])
 # # s1.edit_mark(2, 4)
 # # print(s1)
 # # print(s1.average_mark())
-s2 = Student('Nikolaenlo', [2, 3, 5, 4, 2])
-s3 = Student('Birukov', [3, 5, 3, 2, 5, 4])
-sts = [s1, s2]
-my_group = Group(sts, 'Группа ГК Python')
-# print(my_group)
-# print()
-my_group.add_student(s3)
-# print(my_group)
-# print()
-my_group.remove_student(1)
-# print(my_group)
-group22 = [s2]
-my_group2 = Group(group22, "ГК Web")
-# print(my_group2)
-Group.change_group(my_group, my_group2, 0)
+# # print(my_group)
+# # print()
+# my_group.add_student(s3)
+# # print(my_group)
+# # print()
+# my_group.remove_student(1)
+# # print(my_group)
+
+# # print(my_group2)
+# Group.change_group(my_group, my_group2, 0)
 # print(my_group)
 # print()
 # print(my_group2)
@@ -280,6 +316,15 @@ Group.change_group(my_group, my_group2, 0)
 
 # my_group.read_json()
 #
-my_group.write_json()
-my_group2.write_json()
-my_group.read_json()
+# my_group.write_json()
+# my_group2.write_json()
+# my_group.read_json()
+# Student.dupm_to_json(s1, 'student.json')
+#
+# Student.dupm_to_json(s2, 'student.json')
+# Student.load_to_file('student.json')
+
+# Group.dump_group('group.json', my_group)
+# Group.upload_journal('group.json')
+Group.dump_group('group.json', my_group2)
+Group.upload_journal('group.json')
