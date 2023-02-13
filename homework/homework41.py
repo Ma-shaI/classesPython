@@ -12,7 +12,7 @@ def get_html(url):
 
 
 def write_csv(data):
-    with open('posts.csv', 'a') as f:
+    with open('posts.csv', 'a', encoding='utf-8-sig') as f:
         writer = csv.writer(f, lineterminator='\r', delimiter=';')
         writer.writerow((data['title'], data['url'], data['user'], data['url_user'], data['date_post']))
 
