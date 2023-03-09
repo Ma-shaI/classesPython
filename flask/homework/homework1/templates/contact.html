@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content%} {{super()}}
+<div class="contact">
+  <div class="content">
+    <div class="contact__block">
+      <h4>Contact us</h4>
+      <h2>Let’s Start a Conversation</h2>
+      <p class="pp">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+      </p>
+      <div class="contact__info">
+        <div class="contact__info__hours">
+          <p>Working hours</p>
+          <span></span>
+          <h3>Monday To Friday</h3>
+          <h3>9:00 AM to 8:00 PM</h3>
+          <h5>Our Support Team is available 24/7</h5>
+        </div>
+        <div class="contact__info__hours">
+          <p>Contact Us</p>
+          <span></span>
+          <h3>020 7993 2905</h3>
+          <h5>hello@finsweet.com</h5>
+        </div>
+      </div>
+      <div class="contact__form">
+        <form action="/contact" method="post">
+          <field class="contact__form__field">
+            <input
+              type="text"
+              name="username"
+              required
+              placeholder="Full Name" />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Your Email" />
+            <textarea
+              name="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+            <input type="submit" value="Send Message"
+          /></field>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

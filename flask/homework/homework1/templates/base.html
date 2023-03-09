@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    {% block menu %}
+    <div class="menu">
+      <div class="content">
+        <div class="menu__title">
+          <p>Finsweet</p>
+          <ul class="menu__menu">
+            {%for m in menu%}
+            <li><a href="{{m.url}}">{{m.name}}</a></li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endblock menu%} 
+    {% block post %} 
+    {% if posts and rand_int %}
+    <div class="header">
+      <div class="content">
+        <div class="header__info">
+          <h4>{{posts[rand_int].about}}</h4>
+          <h1>{{posts[rand_int].title}}</h1>
+          <p>{{posts[rand_int].author}}</p>
+          <p>
+            {{posts[rand_int].text}}
+          </p>
+          <button class="header__btn" >Read More ></button>
+        </div>
+      </div>
+    </div>
+    {% endif%}
+    {% endblock post%}
+    {% block content%} {% endblock content%} {%block footer
+    %}
+    <div class="footer">
+      <div class="content">
+        <div class="footer__info">
+          <div class="footer__menu">
+            <p>Finsweet</p>
+            <ul class="footer__menu__ul">
+              {%for m in menu%}
+              <li><a href="{{m.url}}">{{m.name}}</a></li>
+              {%endfor%}
+              <li><a href="privacy_policy">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer__form">
+           <p>Subscribe to our news letter to get latest updates and news</p>
+            <form action="#">
+              <field class="footer__form__field">
+              <input type="email" name="email" placeholder="Enter Your Email" required />
+              <input type="submit" value="Subscribe" />
+            </form></field>
+          </div>
+          <div class="footer__address">
+            <p>
+              Finstreet 118 2561 Fintown
+            </p>
+            <p>Hello@finsweet.com  020 7993 2905</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock footer %}
+  </body>
+</html>
