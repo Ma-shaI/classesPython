@@ -218,18 +218,21 @@
   color: #6d6e76;
 }
 
-.contact {
+.contact,
+.login {
   background: #e5e5e5;
 }
 
-.contact__block {
+.contact__block,
+.login__block {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px 0 60px 0;
 }
-.contact__block h4 {
+.contact__block h4,
+.login__block h4 {
   font-weight: 900;
   font-size: 16px;
   letter-spacing: 3px;
@@ -237,13 +240,15 @@
 
   color: #232536;
 }
-.contact__block h2 {
+.contact__block h2,
+.login__block h2 {
   font-weight: 700;
   font-size: 48px;
   letter-spacing: -2px;
   color: #232536;
 }
-.contact__block .pp {
+.contact__block .pp,
+.login__block .pp {
   font-weight: 400;
   font-size: 16px;
   color: #6d6e76;
@@ -286,7 +291,8 @@
   margin: 0;
   opacity: 0.6;
 }
-.contact__form__field {
+.contact__form__field,
+.login__form__field {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -296,7 +302,9 @@
 }
 .contact__form__field input[type='text'],
 .contact__form__field input[type='email'],
-.contact__form__field textarea {
+.contact__form__field textarea,
+.login__form__field input[type='text'],
+.login__form__field input[type='password'] {
   width: 748px;
   height: 44px;
   padding: 10px 0 10px 15px;
@@ -311,7 +319,8 @@
   color: #232536;
 }
 
-.contact__form__field input[type='submit'] {
+.contact__form__field input[type='submit'],
+.login__form__field input[type='submit'] {
   width: 768px;
   height: 64px;
   background: #ffd050;
@@ -322,6 +331,7 @@
   color: #232536;
   border: none;
 }
+
 .policy {
   color: #ffffff;
 }
