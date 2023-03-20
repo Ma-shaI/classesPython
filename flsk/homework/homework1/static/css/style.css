@@ -43,7 +43,7 @@
   background: #f4f0f8;
 }
 .header__info {
-  padding: 128px 0 192px 0;
+  padding: 94px 0 93px 0;
 }
 .header__info h4 {
   font-weight: 500;
@@ -75,9 +75,18 @@
   left: 80px;
   top: 552px;
   background: #ffd050;
-  font-size: 18px;
-  color: #232536;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 32px;
+  cursor: pointer;
+}
+.header__btn a,
+.new_post a {
+  text-decoration: none;
+  font-size: 18px;
+
+  color: #232536;
 }
 
 .footer__menu {
@@ -224,7 +233,7 @@
 }
 
 .contact__block,
-.login__block {
+.login {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,23 +241,21 @@
   padding: 50px 0 60px 0;
 }
 .contact__block h4,
-.login__block h4 {
+.login h4 {
   font-weight: 900;
   font-size: 16px;
   letter-spacing: 3px;
   text-transform: uppercase;
-
   color: #232536;
+  margin: 0;
 }
-.contact__block h2,
-.login__block h2 {
+.contact__block h2 {
   font-weight: 700;
   font-size: 48px;
   letter-spacing: -2px;
   color: #232536;
 }
-.contact__block .pp,
-.login__block .pp {
+.contact__block .pp {
   font-weight: 400;
   font-size: 16px;
   color: #6d6e76;
@@ -291,8 +298,7 @@
   margin: 0;
   opacity: 0.6;
 }
-.contact__form__field,
-.login__form__field {
+.contact__form__field {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -303,8 +309,8 @@
 .contact__form__field input[type='text'],
 .contact__form__field input[type='email'],
 .contact__form__field textarea,
-.login__form__field input[type='text'],
-.login__form__field input[type='password'] {
+.login__form input[type='text'],
+.login__form input[type='password'] {
   width: 748px;
   height: 44px;
   padding: 10px 0 10px 15px;
@@ -320,7 +326,7 @@
 }
 
 .contact__form__field input[type='submit'],
-.login__form__field input[type='submit'] {
+.login__form input[type='submit'] {
   width: 768px;
   height: 64px;
   background: #ffd050;
@@ -331,7 +337,10 @@
   color: #232536;
   border: none;
 }
-
+.login h4 {
+  display: flex;
+  justify-content: center;
+}
 .policy {
   color: #ffffff;
 }
@@ -382,4 +391,137 @@
   font-size: 16px;
   color: #4c4c4c;
   width: 768px;
+}
+.posts {
+  padding: 30px 0 20px 0;
+}
+.posts h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: -2px;
+  color: #232536;
+}
+.posts ul,
+.profile ul {
+  list-style: none;
+  padding: 0;
+}
+
+.posts a {
+  text-decoration: none;
+}
+.post__cat {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #592ea9;
+  margin: 0;
+}
+
+.post__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -2px;
+  color: #232536;
+  margin: 20px 0 16px 0;
+}
+.post__short {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6d6e76;
+  margin: 0 0 50px 0;
+}
+
+.posts li,
+.profile li {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.blog_post {
+  padding: 100px 0 50px;
+}
+.b__post__author {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+
+  letter-spacing: -1px;
+  color: #592ea9;
+  opacity: 0.87;
+  margin: 0 30px 0 200px;
+}
+
+.b__post__time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 0 0 0 200px;
+  color: #6d6e76;
+}
+
+.b__post__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: -2px;
+  width: 700px;
+  margin: 24px 0 0 200px;
+  color: #232536;
+}
+
+.b__post__category {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 0 200px;
+  color: #232536;
+}
+
+.b__post__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 64px 100px 0 150px;
+  color: #6d6e76;
+}
+.my_posts h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: -2px;
+  color: #232536;
+}
+.new_post_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.new_post {
+  width: 204px;
+  height: 56px;
+  left: 80px;
+  top: 552px;
+  background: #ffd050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  cursor: pointer;
+  margin: 0 0 30px 0;
+  border-radius: 20px;
 }

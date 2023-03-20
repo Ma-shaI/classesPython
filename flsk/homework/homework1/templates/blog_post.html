@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %} {{super()}}
+
+<div class="blog_post">
+  <div class="content">
+    <h3 class="b__post__author">{{blog_post.author_name}}</h3>
+    <p class="b__post__time">Posted on {{time}}</p>
+    <h1 class="b__post__title">{{blog_post.title}}</h1>
+    <h4 class="b__post__category">{{blog_post.category_title}}</h4>
+    <p class="b__post__text">{{blog_post.text}}</p>
+  </div>
+</div>
+
+{% endblock content %}

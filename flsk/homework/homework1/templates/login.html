@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %} {{ super() }}
+<div class="login">
+  <div class="content">
+    <h4>Authorization</h4>
+    <form action="/login" method="post" class="login__form">
+      <p><input type="text" name="username" required placeholder="Name" /></p>
+      <p>
+        <input type="password" name="psw" required placeholder="password" />
+      </p>
+      <p><input type="submit" value="Sing in" /></p>
+    </form>
+  </div>
+</div>
+{% endblock %}

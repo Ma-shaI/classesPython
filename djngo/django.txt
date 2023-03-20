@@ -1,0 +1,7 @@
+django-admin startproject название_проекта
+
+python manage.py runserver
+
+python manage.py runserver 1.2.3.4:4000
+
+python manage.py startapp название_приложения

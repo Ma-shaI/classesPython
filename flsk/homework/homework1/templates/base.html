@@ -26,17 +26,17 @@
     </div>
     {% endblock menu%} 
     {% block post %} 
-    {% if posts and rand_int %}
+    {% if post %}
     <div class="header">
       <div class="content">
         <div class="header__info">
-          <h4>{{posts[rand_int].about}}</h4>
-          <h1>{{posts[rand_int].title}}</h1>
-          <p>{{posts[rand_int].author}}</p>
+          <h4>{{post.category_title}}</h4>
+          <h1>{{post.title}}</h1>
+          <p>{{post.author_name}}</p>
           <p>
-            {{posts[rand_int].text}}
+            {{post.short_text}}
           </p>
-          <button class="header__btn" >Read More ></button>
+          <div class="header__btn" > <a href="{{url_for('blog_post', id_post=post.id)}}">Read More ></a></div>
         </div>
       </div>
     </div>
