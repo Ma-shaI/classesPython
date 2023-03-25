@@ -1,0 +1,47 @@
+body {
+  background: lightyellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+.container h1 {
+  text-align: center;
+}
+.container form,
+.container h2 {
+  background: greenyellow;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+.container__about {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.rules h2 {
+  text-align: center;
+}
+.rules ul {
+  list-style: none;
+}
+.author {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.btn {
+  width: 200px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+  background: gray;
+  text-align: center;
+}
+.btn a {
+  color: aliceblue;
+  text-decoration: none;
+  display: block;
+}
