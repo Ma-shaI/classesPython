@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html'%}
+{% load static %}
+{% block content %}
+<div class="work">
+    <div class="wrap">
+        <h2>My Recent Work</h2>
+        {%for data in datas%}
+
+        <div class="work_block">
+            <div class="work_block_info">
+                <h5>{{data.title}}</h5>
+                <p>{{data.description}}</p>
+                <a href="{{data.url}}" target="_blank">View Case Study</a>
+            </div>
+            <div>
+                <img src="{{data.image.url}}" alt="">
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

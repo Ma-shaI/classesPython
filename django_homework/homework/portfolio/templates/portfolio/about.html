@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html'%}
+{% load static %}
+{% block content %}
+<div class="about">
+    <div class="wrap">
+        <div class="about_block">
+            <div class="about_info">
+                <h2>A Little Bit About Me</h2>
+                <p>I am Shambhavi Mishra from Lucknow, India. I am working in an Indian Startup as a Product Designer
+                    for the
+                    past one year.</p>
+                <p>I got featured various times on many big and small marketplaces, portfolio websites and blogs. I also
+                    received some awards and recognitions from some of the big and small award companies.
+                    Besides designing, I like to write poems, stories and sing songs.</p>
+                <div class="btn contact"><a href="{% url 'contact' %}">Contact Me</a></div>
+            </div>
+            <div class="about_photo">
+                <img src="{% static 'portfolio/photo2.png'%}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

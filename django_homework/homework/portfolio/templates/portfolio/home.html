@@ -1,0 +1,41 @@
+{% extends 'portfolio/base.html'%}
+{% load static %}
+{% block content %}
+
+<div class="header">
+    <div class="wrap">
+        <div class="header_block">
+            <div class="header_info">
+                <h4>Hello All</h4>
+                <h1>I’m Shambhavi, A Product Designer and Problem Solver</h1>
+                <div class="header_btns">
+                    <div class="btn view"><a href="{% url 'works' %}">View My Work</a></div>
+                    <div class="btn contact"><a href="{% url 'contact' %}">Contact Me</a></div>
+                </div>
+            </div>
+            <div class="header_photo">
+                <img src="{% static 'portfolio/photo.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="work">
+    <div class="wrap">
+        <h2>My Recent Work</h2>
+        {%for data in datas%}
+        {% if data.id <= 3 %}
+        <div class="work_block">
+            <div class="work_block_info">
+                <h5>{{data.title}}</h5>
+                <p>{{data.description}}</p>
+                <a href="{{data.url}}" target="_blank">View Case Study</a>
+            </div>
+            <div>
+                <img src="{{data.image.url}}" alt="">
+            </div>
+        </div>
+        {% endif%}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
