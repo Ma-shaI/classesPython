@@ -9,11 +9,31 @@
 <body>
 <div class="menu">
     <div class="wrap">
-        <ul>
+
+        <ul>{% if user.is_authenticated %}
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'works' %}">Work</a></li>
             <li><a href="{% url 'about' %}">About me</a></li>
+
+            {% if user.username == 'admin' %}
+            <li><a href="{% url 'viewmessages' %}">Messages</a></li>
+
+
+            {% endif%}
+            <li>
+                <form action="{% url 'logoutuser' %}" method="post">
+                    {% csrf_token %}
+                    <button class="top">Log out</button>
+                </form></li>
+            {% else %}
+            <li><a href="{%url 'index' %}">Info</a></li>
+            <li><a href="{%url 'loginuser'%}">Sign in</a></li>
+            <li><a href="{%url 'signupuser'%}">Sign up</a></li>
+            {% endif %}
         </ul>
+
+
+
     </div>
 </div>{% block content %}
 

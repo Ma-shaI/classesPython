@@ -1,8 +1,9 @@
-{% extends 'portfolio/base.html'%}
+{% extends 'portfolio/base.html' %}
 {% block content %}
-<div class="contact_block">
+
+<div class="singup">
     <div class="wrap">
-        <h1>Let’s Start a Conversation</h1>
+        <h2>Registration</h2>
         {% if error %}
         <div class="error_info">
             <p>{{error}}</p>
@@ -11,12 +12,8 @@
         <form method="post" class="form">
             {% csrf_token %}
             {{ form.as_p }}
-
-            <div class="pos_btn">
-                <button class="btn_form">Send message</button>
-            </div>
+            <div class="pos_btn"><button class="btn_form">Sign up</button></div>
         </form>
     </div>
 </div>
-
-{% endblock %}
+{% endblock%}

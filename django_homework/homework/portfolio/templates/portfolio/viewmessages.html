@@ -1,0 +1,20 @@
+{%extends 'portfolio/base.html' %}
+{% block content %}
+<div class="messages">
+    <div class="wrap">
+        <h2>Your message</h2>
+        {% for message in messages %}
+        <div class="message_block">
+            <div class="message_info">
+                <h3>{{ message.name }}</h3>
+                <h4>{{ message.email }}</h4>
+                <h4>{{ message.created }}</h4></div>
+
+            <div class="message_m"><p>{{message.message}}</p></div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
