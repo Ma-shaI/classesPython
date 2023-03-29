@@ -12,6 +12,7 @@
     <div class="wrap">
         <ul>
             <li class="logo">Пользователь: {{ user.username }}</li>
+            <li><a href="{% url 'createtodo' %}">Создать</a></li>
             <li><a href="{% url 'curenttodos'%}">Актуальные</a></li>
             <li>
                 <form action="{% url 'logoutuser' %}" method="POST">
