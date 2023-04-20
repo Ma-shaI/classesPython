@@ -3,7 +3,7 @@
 <h1>Задачи:</h1>
 <ul>
     {% for todo in todos %}
-    {% if todo.date_completed is Null%}
+<!--    {% if todo.date_completed is Null%}-->
     <li>
         <a href="{% url 'viewtodo' todo.id %}">{% if todo.important %}
             <b>{{todo.title}}</b>
@@ -14,7 +14,7 @@
             - {{ todo.memo }}
             {% endif%}</a>
     </li>
-    {%endif%}
+<!--    {%endif%}-->
     {% endfor %}
 
 </ul>
