@@ -19,6 +19,7 @@ def profile_update(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=Profile)
 def update_user(sender, instance, created, **kwargs):
+    # print('update_user', **kwargs)
     profile = instance
     user = profile.user
     user.first_name = profile.name
