@@ -1,0 +1,41 @@
+{% extends 'projects/base.html' %}
+{% block content%}
+{% load static %}
+<main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            <a class="backButton" href="#"><img src="{% static 'images/left.png' %}" alt="left"
+                                                onclick="history.back()"></a>
+            <br>
+
+            <form class="form"  method="post" enctype="multipart/form-data">
+                {% csrf_token%}
+                <!-- Input:Text -->
+                {% if request.user.is_authenticated == False %}
+                <div class="form__field">
+                    <label>{{ form.name.label }}</label>
+                    {{ form.name }}
+                </div>
+
+                <div class="form__field">
+                    <label>{{ form.email.label }}</label>
+                    {{ form.email }}
+                </div>
+                {% endif %}
+                <div class="form__field">
+                    <label>{{ form.subject.label }}</label>
+                    {{ form.subject }}
+                </div>
+                <div class="form__field">
+                    <label>{{ form.body.label }}</label>
+                    {{ form.body }}
+                </div>
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit"/>
+
+
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

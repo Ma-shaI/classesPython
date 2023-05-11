@@ -18,7 +18,7 @@ def search_profiles(request):
 
 def paginate_profile(request, profiles, results):
     page = request.GET.get('page', 1)
-    paginator = Paginator(profiles, results, allow_empty_first_page=False)
+    paginator = Paginator(profiles, results)
 
     profiles = paginator.get_page(page)
     left_index = int(page) - 4

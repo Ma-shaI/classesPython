@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .utils import search_projects, paginate_projects
 from django.contrib import messages
 
+
 def projects(request):
     pr, search_query = search_projects(request)
     pr, custom_range = paginate_projects(request, pr, 3)

@@ -6,7 +6,7 @@
             <a
                     href="?page={{ queryset.previous_page_number }}"
                     class="btn page-link"
-                    data-page="queryset.previous_page_number"
+                    data-page="{{queryset.previous_page_number}}"
             >&lt; Prev</a
             >
         </li>
@@ -31,7 +31,7 @@
             <a
                     href="?page={{ queryset.next_page_number }}"
                     class="btn page-link"
-                    data-page="queryset.next_page_number"
+                    data-page="{{queryset.next_page_number}}"
             >Next &gt;</a
             >
         </li>
