@@ -13,32 +13,55 @@
         <ul class="mainmenu">
             <li class="logo"><a href="{% url 'index' %}">Logo</a></li>
             {% for m in menu %}
-            <li class="last"><a href="{% url m.url_name %">
+            <li class="last"><a href="{% url m.url_name %}">
                 {{ m.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
 </div>
 <div class="content">
-  <div class="wrap">
-      <div class="sidebar">
-          <ul>
-              {% if cat_selected == 0%}
-              <li class="selected">Все категории</li>
-              {% else %}
-              <li>
-                  <a href="{% url 'index' %}">Все категории</a>
-              </li>
-              {% endif %}
-             {% show_categories cat_selected=cat_selected%}
-          </ul>
+    <div class="wrap">
+        <div class="sidebar">
+            <ul>
+                {% if cat_selected == 0%}
+                <li class="selected">Все категории</li>
+                {% else %}
+                <li>
+                    <a href="{% url 'index' %}">Все категории</a>
+                </li>
+                {% endif %}
 
-      </div>
-      <div class="main">
-    {% block content %}
+                {% for c in cats %}
+                {% if c.blog__count > 0 %}
+                {% if c.pk == cat_selected %}
+                <li class="selected">{{ c.name }}</li>
+                {% else %}
+                <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+                {% endif %}
+                {%endif%}
+                {% endfor %}
+            </ul>
 
-    {% endblock %}</div>
-  </div>
+        </div>
+        <div class="main">
+            {% block content %}
+
+            {% endblock %}
+            <div>
+                <ul class="list-pages">
+                    {% for p in paginator.page_range%}
+                        {% if page_obj.number == p %}
+                        <li class="page-num page-num-selected">{{ p }}</li>
+                        {% else %}
+                        <li class="page-num">
+                            <a href="?page={{ p }}">{{ p }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
