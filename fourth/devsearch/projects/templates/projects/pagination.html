@@ -4,7 +4,7 @@
         {% if queryset.has_previous %}
         <li>
             <a
-                    href="?page={{ queryset.previous_page_number }}"
+                    href='?page={{ queryset.previous_page_number }}{% if selected_filters %}&{{filter_name}}={{ selected_filters|join:"&filter=" }}{% endif %}'
                     class="btn page-link"
                     data-page="{{queryset.previous_page_number}}"
             >&lt; Prev</a
@@ -13,7 +13,7 @@
         {% endif %} {% for page in custom_range %} {% if page == queryset.number %}
         <li>
             <a
-                    href="?page={{page}}"
+                    href='?page={{page}}{% if selected_filters %}&{{filter_name}}={{ selected_filters|join:"&filter=" }}{% endif %}'
                     class="btn page-link btn--sub"
                     data-page="{{ page }}"
             >{{page}}</a
@@ -21,7 +21,7 @@
         </li>
         {% else %}
         <li>
-            <a href="?page={{page}}"
+            <a href='?page={{page}}{% if selected_filters %}&{{filter_name}}={{ selected_filters|join:"&filter=" }}{% endif %}'
                class="btn page-link" data-page="{{ page }}"
             >{{page}}</a
             >
@@ -29,7 +29,7 @@
         {% endif %} {% endfor %} {% if queryset.has_next %}
         <li>
             <a
-                    href="?page={{ queryset.next_page_number }}"
+                    href='?page={{ queryset.next_page_number }}{% if selected_filters %}&{{filter_name}}={{ selected_filters|join:"&filter="}}{% endif %}'
                     class="btn page-link"
                     data-page="{{queryset.next_page_number}}"
             >Next &gt;</a

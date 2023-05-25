@@ -3,14 +3,14 @@ from django.db.models import Count
 
 menu = [
     {'title': 'Добавить статью', 'url_name': 'add_page'},
-    {'title': 'Войти', 'url_name': 'index'},
+    {'title': 'Обратная связь', 'url_name': 'contact'}
 ]
 
 
 class DataMixin:
     paginate_by = 3
-    def get_user_context(self, **kwargs):
 
+    def get_user_context(self, **kwargs):
         context = kwargs
         cats = Category.objects.annotate(Count('blog'))
         user_menu = menu.copy()

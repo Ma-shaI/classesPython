@@ -5,6 +5,6 @@
     {% if post.photo %}
     <img src="{{ post.photo.url }}" alt="" class="image">
     {% endif%}
-    {{ post.content|linebreaks }}
+    {{ post.content|safe }}
 </div>
 {% endblock %}

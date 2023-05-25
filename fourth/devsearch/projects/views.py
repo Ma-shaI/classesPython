@@ -4,17 +4,25 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from .utils import search_projects, paginate_projects
 from django.contrib import messages
+from django.core.paginator import Paginator
+from django.db.models import Q
+from users.models import Profile
 
 
 def projects(request):
-    pr, search_query = search_projects(request)
-    pr, custom_range = paginate_projects(request, pr, 3)
+    page_obj, filters, filter_name = search_projects(request)
+    page_obj, custom_range = paginate_projects(request, page_obj, 3)
 
     context = {
-        'projects': pr,
-        'search_query': search_query,
+        'projects': page_obj,
+        # 'search_query': search_query,
         # 'paginator': paginator,
-        'custom_range': custom_range
+        'custom_range': custom_range,
+        # 'page_obj': page_obj,
+        'selected_filters': filters,
+        'options': Tag.objects.all(),
+        'filter_name': filter_name,
+        'users': Profile.objects.all()
     }
     return render(request, 'projects/projects.html', context)
 
@@ -26,7 +34,7 @@ def project(request, pk):
         form = ReviewForm(request.POST)
         review = form.save(commit=False)
         review.project = project_obj
-        review.owner = request.user.profile
+        review.owner = request.user.profilert
         review = form.save()
 
         project_obj.get_vote_count()
