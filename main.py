@@ -220,26 +220,53 @@
 #     print('Треугольник равнобедренный')
 # else:
 #     print('Треугольник разносторонний')
+#
+# num = int(input('Введите номер месяца: '))
+# if num > 0 and num < 13:
+#     if 1 <= num <= 2 or num == 12:
+#         print('Зима')
+#     elif 3 <= num <= 5:
+#         print('Весна')
+#     elif 6 <= num <= 8:
+#         print('Лето')
+#     else:
+#         print('Осень')
+# else:
+#     print('Введите корректное число')
+#
+# # int()- преобразовывает к целочисленному типу данных
+# # float()- преобразовывает к вещественному типу данных
+# # str() -преобразовывает к строковому типу данных
+# # bool() - преобразование к булевом типу данных
+# # False = 0, '', None, False
+#
+# print('Hello GitHub')
+#
+# print("Внесли изменения!!!")
+#
+# class A:
+#     def say(self):
+#         raise NotImplementedError
+#
+#
+# class c(A):
+#     def say(self):
+#         print('m')
+#
+#
+# class d(A):
+#     def say(self):
+#         print('g')
+#
+#
+# class cd(c, d):
+#     def eat(self):
+#         print('no')
+#
+#
+# cat = cd()
+# print(f'{cd.say()}')
 
-num = int(input('Введите номер месяца: '))
-if num > 0 and num < 13:
-    if 1 <= num <= 2 or num == 12:
-        print('Зима')
-    elif 3 <= num <= 5:
-        print('Весна')
-    elif 6 <= num <= 8:
-        print('Лето')
-    else:
-        print('Осень')
-else:
-    print('Введите корректное число')
-
-# int()- преобразовывает к целочисленному типу данных
-# float()- преобразовывает к вещественному типу данных
-# str() -преобразовывает к строковому типу данных
-# bool() - преобразование к булевом типу данных
-# False = 0, '', None, False
-
-print('Hello GitHub')
-
-print("Внесли изменения!!!")
+a = None
+b= False
+print(a==b, a is b)
